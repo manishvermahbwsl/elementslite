@@ -25,3 +25,4 @@
 	require_once( get_template_directory() . '/elements/portfolio-lite.php' );
 	require_once( get_template_directory() . '/elements/slider-lite.php' );
 	require_once( get_template_directory() . '/elements/boxes.php' );
+	require_once( get_template_directory() . '/elements/twitter-bar.php' );
