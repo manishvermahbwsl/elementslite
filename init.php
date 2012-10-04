@@ -26,3 +26,15 @@
 	require_once( get_template_directory() . '/elements/slider-lite.php' );
 	require_once( get_template_directory() . '/elements/boxes.php' );
 	require_once( get_template_directory() . '/elements/twitter-bar.php' );
+
+function cyberchimps_selected_elements() {
+	$options = array(
+			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
+			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			"blog_post_page"	 => __( 'Post Page', 'cyberchimps' ),
+			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
+			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )
+		);
+	return $options;
+}
+add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_elements' );
