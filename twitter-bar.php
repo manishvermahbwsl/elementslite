@@ -76,7 +76,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
               $user_permalink = 'http://twitter.com/#!/'.$screen_name;
               $tweet_permalink = 'http://twitter.com/#!/'.$screen_name.'/status/'.$latest_tweet[0]->id_str;
               echo '<a href="'.$user_permalink.'"> ';
-              echo '<img src="'.get_template_directory_uri().'/core/lib/images/twitterbird.png" /> ';
+              echo '<img src="'.get_template_directory_uri().'/cyberchimps/lib/images/twitterbird.png" /> ';
               echo $screen_name .'</a> - '.$latest_tweet[0]->text.' <small><a href="'.$tweet_permalink.'">' .human_time_diff(strtotime($latest_tweet[0]->created_at), current_time('timestamp')).' ago</a></small>';
             } else {
               echo apply_filters('cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps').'</p>');
