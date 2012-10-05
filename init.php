@@ -27,6 +27,7 @@
 	require_once( get_template_directory() . '/elements/boxes.php' );
 	require_once( get_template_directory() . '/elements/twitter-bar.php' );
 
+// main blog drag and drop options
 function cyberchimps_selected_elements() {
 	$options = array(
 			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
@@ -38,3 +39,15 @@ function cyberchimps_selected_elements() {
 	return $options;
 }
 add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_elements' );
+
+function cyberchimps_selected_page_elements() {
+	$options = array(
+			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
+			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
+			"page_section"	 => __( 'Page', 'cyberchimps' ),
+			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
+			"twitterbar_section" => __( 'Twitter Bar', 'cyberchimps' )
+		);
+	return $options;
+}
+add_filter( 'cyberchimps_elements_draganddrop_page_options', 'cyberchimps_selected_page_elements' );
