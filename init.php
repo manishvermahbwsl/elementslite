@@ -16,9 +16,14 @@
  * @link     http://www.cyberchimps.com/
  */
 
-// FIXME: Fix documentation
-// Load elements
 
+// Load style for elements
+function add_elements_style() {
+	wp_register_style( 'elements_style', get_template_directory_uri() . '/elements/lib/css/elements.css' );
+	wp_enqueue_style('elements_style');
+}
+
+add_action( 'wp_enqueue_scripts', 'add_elements_style' );
 
 // FIXME: Fix documentation
 // Load elements
