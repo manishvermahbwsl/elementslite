@@ -102,7 +102,7 @@ function boxes_render_display() {
 			else: ?>
 				<div class="box span4">
 					<a href="http://cyberchimps.com">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/images/boxes/slidericon.png" alt="CyberChimps Slider" />
+						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/lib/images/boxes/slidericon.png" alt="CyberChimps Slider" />
           </a>
 					<h2 class="box-widget-title">Responsive iFeature Pro Slider</h2>
 					<p>The Responsive iFeature Pro Slider now adjusts dynamically when being viewed by a mobile device such as an iPhone or iPad. It also includes image resizing, and thumbnails.</p>
@@ -110,7 +110,7 @@ function boxes_render_display() {
         
         <div class="box span4">
 					<a href="http://cyberchimps.com">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/images/boxes/blueprint.png" alt="CyberChimps Blueprint" />
+						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/lib/images/boxes/blueprint.png" alt="CyberChimps Blueprint" />
           </a>
 					<h2 class="box-widget-title">Responsive Design</h2>
 					<p>With Responsive Design, and iFeature Pro your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.</p>
@@ -118,7 +118,7 @@ function boxes_render_display() {
         
         <div class="box span4">
 					<a href="http://cyberchimps.com">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/images/boxes/docs.png" alt="CyberChimps Help" />
+						<img class="box-image" src="<?php echo get_template_directory_uri(); ?>/elements/lib/images/boxes/docs.png" alt="CyberChimps Help" />
           </a>
 					<h2 class="box-widget-title">Excellent Support</h2>
 					<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a support forum, and precise documentation.</p>
