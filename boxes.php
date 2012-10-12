@@ -118,7 +118,7 @@ function boxes_render_display() {
         
         <div class="box span4">
 					<a href="http://cyberchimps.com">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box3_image', 'elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
+						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box3_image', '/elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a support forum, and precise documentation.', 'cyberchimps' ); ?></p>
