@@ -114,7 +114,7 @@ function boxes_render_display() {
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Responsive Design', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'With Responsive Design, and iFeature Pro your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.', 'cyberchimps' ); ?></p>
-				</div><!--end box2-->
+				</div><!--end box3-->
         
         <div class="box span4">
 					<a href="http://cyberchimps.com">
@@ -122,7 +122,7 @@ function boxes_render_display() {
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a support forum, and precise documentation.', 'cyberchimps' ); ?></p>
-				</div><!--end box2-->
+				</div><!--end box4-->
 			
 		<?php	endif;
 		?>
