@@ -21,6 +21,9 @@
 function add_elements_style() {
 	wp_register_style( 'elements_style', get_template_directory_uri() . '/elements/lib/css/elements.css' );
 	wp_enqueue_style('elements_style');
+	
+	wp_register_script( 'elements_js', get_template_directory_uri() . '/elements/lib/js/elements.js' );
+	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'add_elements_style' );
