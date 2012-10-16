@@ -26,7 +26,7 @@ add_action( 'portfolio_lite', 'portfolio_lite_content' );
 function portfolio_lite_content() {
 
 	// call globals
-	global $options, $post;
+	global $post;
 
 	// Getting options of portfolio-lite when added to page
 	if (is_page()) {
@@ -61,35 +61,35 @@ function portfolio_lite_content() {
 	}
 	
 	// Getting options of portfolio-lite when added to blog
-	elseif( is_home() ) {
+	else {
 		
 		// Geting title option
-		$title_enable = $options['cyberchimps_blog_portfolio_title_toggle'];
-		$title = $options['cyberchimps_blog_portfolio_title'];
+		$title_enable = cyberchimps_option('cyberchimps_blog_portfolio_title_toggle');
+		$title = cyberchimps_option('cyberchimps_blog_portfolio_title');
 	
 		// Getting Image URL for each protfolio
-		$img1 = $options['cyberchimps_blog_portfolio_lite_image_one'];
-		$img2 = $options['cyberchimps_blog_portfolio_lite_image_two'];
-		$img3 = $options['cyberchimps_blog_portfolio_lite_image_three'];
-		$img4 = $options['cyberchimps_blog_portfolio_lite_image_four'];
+		$img1 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_one');
+		$img2 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_two');
+		$img3 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_three');
+		$img4 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_four');
 	
 		// Getting caption for each protfolio
-		$caption1 = $options['cyberchimps_blog_portfolio_lite_image_one_caption'];
-		$caption2 = $options['cyberchimps_blog_portfolio_lite_image_two_caption'];
-		$caption3 = $options['cyberchimps_blog_portfolio_lite_image_three_caption'];
-		$caption4 = $options['cyberchimps_blog_portfolio_lite_image_four_caption'];
+		$caption1 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_one_caption');
+		$caption2 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_two_caption');
+		$caption3 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_three_caption');
+		$caption4 = cyberchimps_option('cyberchimps_blog_portfolio_lite_image_four_caption');
 		
 		// Getting Custom URL toggle
-		$url_toggle1 = $options['cyberchimps_blog_portfolio_link_toggle_one'];
-		$url_toggle2 = $options['cyberchimps_blog_portfolio_link_toggle_two'];
-		$url_toggle3 = $options['cyberchimps_blog_portfolio_link_toggle_three'];
-		$url_toggle4 = $options['cyberchimps_blog_portfolio_link_toggle_four'];
+		$url_toggle1 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_one');
+		$url_toggle2 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_two');
+		$url_toggle3 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_three');
+		$url_toggle4 = cyberchimps_option('cyberchimps_blog_portfolio_link_toggle_four');
 		
 		// Getting URL of custom link
-		$url1 = $options['cyberchimps_blog_portfolio_link_url_one'];
-		$url2 = $options['cyberchimps_blog_portfolio_link_url_two'];
-		$url3 = $options['cyberchimps_blog_portfolio_link_url_three'];
-		$url4 = $options['cyberchimps_blog_portfolio_link_url_four'];
+		$url1 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_one');
+		$url2 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_two');
+		$url3 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_three');
+		$url4 = cyberchimps_option('cyberchimps_blog_portfolio_link_url_four');
 	}
 
 	// Set the title to default value if null is supplied
