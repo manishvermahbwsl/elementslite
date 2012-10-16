@@ -23,6 +23,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 	class CyberChimpsTwitterBar {
 		
 		protected static $instance;
+		public $options;
 		
 		/* Static Singleton Factory Method */
 		public static function instance() {
@@ -40,12 +41,12 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 		 */
 		protected function __construct( ) {
 			add_action( 'twitterbar_section', array( $this, 'render_display' ) );
+			$this->options = get_option( 'cyberchimps_options' );
 		}
 		
 		// TODO: Fix documentation
 		public function render_display() {
 			global $post;
-			$options = get_option( 'cyberchimps_options' );
 			
 			if( is_page() ) {
 				$user_details = array();
@@ -56,7 +57,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 			}
 			else {
 				$user_details = array();
-				$user_details['screen_name'] = ( $options['twitter_handle'] != '' ) ? $options['twitter_handle'] : 'CyberChimps';
+				$user_details['screen_name'] = ( $this->options['twitter_handle'] != '' ) ? $this->options['twitter_handle'] : 'CyberChimps';
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] = '1';				
