@@ -38,9 +38,9 @@ function cyberchimps_init_boxes_post_type() {
 	
 	$meta_boxes = array();
 	
-	$mb = new Chimps_Metabox('boxes', 'Boxes Element', array('pages' => array('boxes')));
+	$mb = new Chimps_Metabox('boxes', __( 'Boxes Element', 'cyberchimps' ), array('pages' => array('boxes')));
 	$mb
-		->tab("Boxes Element")
+		->tab( __( 'Boxes Element', 'cyberchimps' ) )
 			->single_image('cyberchimps_box_image', __( 'Box Image', 'cyberchimps' ), '')
 			->text('cyberchimps_box_url', __( 'Box URL', 'cyberchimps' ), '')
 			->textarea('cyberchimps_box_text', __( 'Box Text', 'cyberchimps' ), '')
@@ -90,9 +90,15 @@ function boxes_render_display() {
 				$box_text = get_post_meta( $box->ID, 'cyberchimps_box_text', true );
 		?>	
 				<div id="box<?php echo $box_counter?>" class="box span4">
-					<a href="<?php echo $box_url; ?>">
+        <?php if( $box_url != '' ): ?>
+					<a href="<?php echo $box_url; ?>" class="box-link">
 						<img class="box-image" src="<?php echo $box_image; ?>" />
           </a>
+        <?php else: ?>
+        	<a class="box-no-url">
+						<img class="box-image" src="<?php echo $box_image; ?>" />
+          </a>
+        <?php endif; ?>
 					<h2 class="box-widget-title"><?php echo $box->post_title; ?></h2>
 					<p><?php echo $box_text; ?></p>
 				</div><!--end box1-->
@@ -101,7 +107,7 @@ function boxes_render_display() {
 			endforeach;
 			else: ?>
 				<div class="box span4">
-					<a href="http://cyberchimps.com">
+					<a href="http://cyberchimps.com" class="box-link">
 						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box1_image', '/elements/lib/images/boxes/slidericon.png' ); ?>" alt="CyberChimps Slider" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Responsive iFeature Pro Slider', 'cyberchimps' ); ?></h2>
@@ -109,7 +115,7 @@ function boxes_render_display() {
 				</div><!--end box1-->
         
         <div class="box span4">
-					<a href="http://cyberchimps.com">
+					<a href="http://cyberchimps.com" class="box-link">
 						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box2_image', '/elements/lib/images/boxes/blueprint.png' ); ?>" alt="CyberChimps Blueprint" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Responsive Design', 'cyberchimps' ); ?></h2>
@@ -117,7 +123,7 @@ function boxes_render_display() {
 				</div><!--end box3-->
         
         <div class="box span4">
-					<a href="http://cyberchimps.com">
+					<a href="http://cyberchimps.com" class="box-link">
 						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box3_image', '/elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps' ); ?></h2>
