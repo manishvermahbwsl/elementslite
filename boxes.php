@@ -52,10 +52,10 @@ function cyberchimps_init_boxes_post_type() {
 }
 add_action( 'init', 'cyberchimps_init_boxes_post_type' );
 
-add_action( 'boxes', 'boxes_render_display' );
+add_action( 'boxes', 'cyberchimps_boxes_render_display' );
 
 // Define content for boxes
-function boxes_render_display() {
+function cyberchimps_boxes_render_display() {
 	
 	// Intialize box counter
 	$box_counter = 1;

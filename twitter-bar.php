@@ -62,7 +62,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] = '1';				
 			}
-			$latest_tweet = self::get_tweets( $user_details );
+			$latest_tweet = self::cyberchimps_get_tweets( $user_details );
 			
 			if ( is_wp_error( $latest_tweet ) ) {
 				echo $latest_tweet->get_error_code() . ' - ' . $latest_tweet->get_error_message();
@@ -91,7 +91,7 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 		}
 		
 		// TODO: Fix documentation
-		function get_tweets( $args ) {
+		function cyberchimps_get_tweets( $args ) {
 			// Build request URL
 			// TODO: Filter @ sign out if it is there and then add it back
 			$args['screen_name'] = '@'.$args['screen_name'];

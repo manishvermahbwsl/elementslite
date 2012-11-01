@@ -20,10 +20,10 @@
 if ( !defined('ABSPATH') ) { die('-1'); }
  
 // Portfolio Lite element action
-add_action( 'portfolio_lite', 'portfolio_lite_content' );
+add_action( 'portfolio_lite', 'cyberchimps_portfolio_lite_content' );
 
 // Defining content of the portfolio-lite element
-function portfolio_lite_content() {
+function cyberchimps_portfolio_lite_content() {
 
 	// call globals
 	global $post;

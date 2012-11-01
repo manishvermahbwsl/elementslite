@@ -20,9 +20,9 @@
 if ( !defined('ABSPATH') ) { die('-1'); }
 
 // Action for Slider Lite
-add_action ('slider_lite', 'slider_lite_content' );
+add_action ('slider_lite', 'cyberchimps_slider_lite_content' );
 
-function slider_lite_content() {
+function cyberchimps_slider_lite_content() {
 
 	global $wp_query, $post;
 	

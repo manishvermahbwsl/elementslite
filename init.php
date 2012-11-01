@@ -18,7 +18,7 @@
 
 
 // Load style for elements
-function add_elements_style() {
+function cyberchimps_add_elements_style() {
 	wp_register_style( 'elements_style', get_template_directory_uri() . '/elements/lib/css/elements.css' );
 	wp_enqueue_style('elements_style');
 	
@@ -26,7 +26,7 @@ function add_elements_style() {
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'add_elements_style' );
+add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style' );
 
 // FIXME: Fix documentation
 // Load elements
