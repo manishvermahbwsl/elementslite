@@ -38,7 +38,7 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style' );
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
 	$options = array(
-			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
+			'boxes_lite'				 => __( 'Boxes Lite', 'cyberchimps' ),
 			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
 			"blog_post_page"	 => __( 'Post Page', 'cyberchimps' ),
 			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),
@@ -50,7 +50,7 @@ add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_el
 
 function cyberchimps_selected_page_elements() {
 	$options = array(
-			'boxes'				 => __( 'Boxes', 'cyberchimps' ),
+			'boxes_lite'				 => __( 'Boxes Lite', 'cyberchimps' ),
 			"portfolio_lite"	 => __( 'Portfolio Lite', 'cyberchimps' ),	
 			"page_section"	 => __( 'Page', 'cyberchimps' ),
 			"slider_lite"		 => __( 'Slider Lite', 'cyberchimps' ),

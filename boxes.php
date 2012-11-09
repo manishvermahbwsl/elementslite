@@ -20,16 +20,15 @@
 if ( !defined('ABSPATH') ) { die('-1'); }
 
 function cyberchimps_init_boxes_post_type() {
-	register_post_type( 'boxes',
+	register_post_type( 'boxes_lite',
 		array(
 			'labels' => array(
-				'name' => __('Boxes', 'cyberchimps'),
-				'singular_name' => __('Boxes', 'cyberchimps'),
+				'name' => __('Boxes Lite', 'cyberchimps'),
+				'singular_name' => __('Boxes Lite', 'cyberchimps'),
 			),
 			'public' => true,
 			'show_ui' => true, 
 			'supports' => array('title'),
-			'taxonomies' => array( 'boxes_categories'),
 			'has_archive' => true,
 			'menu_icon' => get_template_directory_uri() . '/cyberchimps/lib/images/custom-types/boxes.png',
 			'rewrite' => array('slug' => 'boxes')
@@ -38,9 +37,9 @@ function cyberchimps_init_boxes_post_type() {
 	
 	$meta_boxes = array();
 	
-	$mb = new Chimps_Metabox('boxes', __( 'Boxes Element', 'cyberchimps' ), array('pages' => array('boxes')));
+	$mb = new Chimps_Metabox('boxes_lite', __( 'Boxes Lite Element', 'cyberchimps' ), array('pages' => array('boxes_lite')));
 	$mb
-		->tab( __( 'Boxes Element', 'cyberchimps' ) )
+		->tab( __( 'Boxes Lite Element', 'cyberchimps' ) )
 			->single_image('cyberchimps_box_image', __( 'Box Image', 'cyberchimps' ), '')
 			->text('cyberchimps_box_url', __( 'Box URL', 'cyberchimps' ), '')
 			->textarea('cyberchimps_box_text', __( 'Box Text', 'cyberchimps' ), '')
@@ -52,7 +51,41 @@ function cyberchimps_init_boxes_post_type() {
 }
 add_action( 'init', 'cyberchimps_init_boxes_post_type' );
 
-add_action( 'boxes', 'cyberchimps_boxes_render_display' );
+add_action( 'boxes_lite', 'cyberchimps_boxes_render_display' );
+
+//Limit number of posts that can be created
+function cyberchimps_box_limit() {
+	global $pagenow, $typenow;
+	
+	$count_posts = get_posts( array( 'post_type' => 'boxes_lite', 'post_status' => 'publish' ) );
+	$count = count( $count_posts );
+	if( $count >= 3 ) {
+		echo '<script>
+					jQuery(document).ready(function($) {
+						$("#menu-posts-boxes_lite .wp-submenu-wrap li").each(function(){
+							if($(this).find("a").attr("href") == "post-new.php?post_type=boxes_lite" ){
+								$(this).remove();
+							}
+						});
+					});
+					</script>';
+		if( $pagenow == 'edit.php' && $typenow == 'boxes_lite' ){
+			echo '<script>
+					jQuery(document).ready(function($) {
+						$(".wrap h2 a").remove();
+					});
+					</script>';
+		}
+		if( $pagenow == 'post.php' && $typenow == 'boxes_lite' ){
+			echo '<script>
+					jQuery(document).ready(function($) {
+						$(".wrap h2 a").remove();
+					});
+					</script>';
+		}
+	}
+}
+add_action( 'admin_head', 'cyberchimps_box_limit' );
 
 // Define content for boxes
 function cyberchimps_boxes_render_display() {
@@ -66,7 +99,7 @@ function cyberchimps_boxes_render_display() {
 						'offset'          => 0,
 						'orderby'         => 'post_date',
 						'order'           => 'ASC',
-						'post_type'       => 'boxes',
+						'post_type'       => 'boxes_lite',
 						'post_status'     => 'publish'
 					);
 	$boxes = get_posts( $args );
