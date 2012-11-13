@@ -53,7 +53,7 @@ add_action( 'init', 'cyberchimps_init_boxes_post_type' );
 
 add_action( 'boxes_lite', 'cyberchimps_boxes_render_display' );
 
-//Limit number of posts that can be created
+//Limit number of posts that can be created in free version
 function cyberchimps_box_limit() {
 	global $pagenow, $typenow;
 	
@@ -122,18 +122,18 @@ function cyberchimps_boxes_render_display() {
 				// Get the text of the box
 				$box_text = get_post_meta( $box->ID, 'cyberchimps_box_text', true );
 		?>	
-				<div id="box<?php echo $box_counter?>" class="box span4">
+				<div id="box<?php echo $box_counter; ?>" class="box span4">
         <?php if( $box_url != '' ): ?>
-					<a href="<?php echo $box_url; ?>" class="box-link">
-						<img class="box-image" src="<?php echo $box_image; ?>" />
+					<a href="<?php echo esc_url( $box_url ); ?>" class="box-link">
+						<img class="box-image" src="<?php echo esc_url( $box_image ); ?>" />
           </a>
         <?php else: ?>
         	<a class="box-no-url">
-						<img class="box-image" src="<?php echo $box_image; ?>" />
+						<img class="box-image" src="<?php echo esc_url( $box_image ); ?>" />
           </a>
         <?php endif; ?>
 					<h2 class="box-widget-title"><?php echo $box->post_title; ?></h2>
-					<p><?php echo $box_text; ?></p>
+					<p><?php echo wp_kses( $box_text, array( 'br' => array(),'em' => array(),'strong' => array() ) ); ?></p>
 				</div><!--end box1-->
 		<?php   
 			$box_counter++;

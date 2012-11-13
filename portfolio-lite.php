@@ -145,35 +145,35 @@ function cyberchimps_portfolio_lite_content() {
      <div id="gallery" class="span12">
 			
 			<!-- Display the title -->
-			<h2 class="entry-title"><?php echo $title_output; ?></h2>
+			<h2 class="entry-title"><?php esc_html_e( $title_output ); ?></h2>
 			
 			<ul class="row-fluid">
 			
 				<!-- Portfolio 1 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $portfolio_link1 ;?>' rel='<?php echo $portfolio_rel1 ;?>' title='<?php echo $caption1 ;?>'><img src='<?php echo $img1 ;?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php echo $caption1 ;?></div>
+					<a href='<?php echo esc_url( $portfolio_link1 ); ?>' rel='<?php esc_attr_e( $portfolio_rel1 ); ?>' title='<?php esc_attr_e( $caption1 ); ?>'><img src='<?php echo esc_url( $img1 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php esc_html_e( $caption1 ); ?></div>
 					</a>
 				</li>
 		
 				<!-- Portfolio 2 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $portfolio_link2 ;?>' rel='<?php echo $portfolio_rel2 ;?>' title='<?php echo $caption2 ;?>'><img src='<?php echo $img2 ;?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php echo $caption2 ;?></div>
+					<a href='<?php echo esc_url( $portfolio_link2 ); ?>' rel='<?php esc_attr_e( $portfolio_rel2 ); ?>' title='<?php esc_attr_e( $caption2 ); ?>'><img src='<?php echo esc_url( $img2 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php esc_html_e( $caption2 ); ?></div>
 					</a>
 				</li>
 		
 				<!-- Portfolio 3 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $portfolio_link3 ;?>' rel='<?php echo $portfolio_rel3 ;?>' title='<?php echo $caption3 ;?>'><img src='<?php echo $img3 ;?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php echo $caption3 ;?></div>
+					<a href='<?php echo esc_url( $portfolio_link3 );?>' rel='<?php esc_attr_e( $portfolio_rel3 ); ?>' title='<?php esc_attr_e( $caption3 ); ?>'><img src='<?php echo esc_url( $img3 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php esc_html_e( $caption3 ); ?></div>
 					</a>
 				</li>
 			
 				<!-- Portfolio 4 -->
 				<li id="portfolio_wrap" class="span3">
-					<a href='<?php echo $portfolio_link4 ;?>' rel='<?php echo $portfolio_rel4 ;?>' title='<?php echo $caption4 ;?>'><img src='<?php echo $img4 ;?>'  alt='Image 1'/>
-						<div class='portfolio_caption'><?php echo $caption4 ;?></div>
+					<a href='<?php echo esc_url( $portfolio_link4 ); ?>' rel='<?php esc_attr_e( $portfolio_rel4 ); ?>' title='<?php esc_attr_e( $caption4 ); ?>'><img src='<?php echo esc_url( $img4 ); ?>'  alt='Image 1'/>
+						<div class='portfolio_caption'><?php esc_html_e( $caption4 ); ?></div>
 					</a>
 				</li>
 			</ul>

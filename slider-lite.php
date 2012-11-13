@@ -62,8 +62,8 @@ function cyberchimps_slider_lite_content() {
       <?php else: ?>
       <div class="item">
       <?php endif; ?>
-				<a href="<?php echo $slide['link']; ?>">
-					<img src="<?php echo $slide['img'];?>" alt="Slider" />
+				<a href="<?php echo esc_url( $slide['link'] ); ?>">
+					<img src="<?php echo esc_url( $slide['img'] ); ?>" alt="Slider" />
 				</a>
 			</div>
 			<?php endif; ?>
