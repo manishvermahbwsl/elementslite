@@ -47,6 +47,9 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 		public function render_display() {
 			global $post;
 			
+			// Set directory uri
+			$directory_uri = get_template_directory_uri();
+	
 			if( is_page() ) {
 				$user_details = array();
 				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
@@ -79,11 +82,11 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
               $screen_name = $latest_tweet[0]->user->screen_name;
               $user_permalink = 'http://twitter.com/#!/'.$screen_name;
               $tweet_permalink = 'http://twitter.com/#!/'.$screen_name.'/status/'.$latest_tweet[0]->id_str;
-              echo '<img src="'.get_template_directory_uri().'/elements/lib/images/twitter/twitterbird.png" /> ';
+              echo '<img src="' . $directory_uri . '/elements/lib/images/twitter/twitterbird.png" /> ';
               echo '<p><a href="'.esc_url( $user_permalink ).'"> ';
               echo esc_html( $screen_name ) .'</a> - '.wp_kses( $tweet_text, array( 'a' => array( 'href' => array() ) ) ).' <small><a href="'.esc_url( $tweet_permalink ).'">' .human_time_diff(strtotime( esc_html( $latest_tweet[0]->created_at ) ), current_time( 'timestamp' ) ).' ago</a></small></p>';
             } else {
-              echo '<img src="'.get_template_directory_uri().'/elements/lib/images/twitter/twitterbird.png" /> ';
+              echo '<img src="' . $directory_uri . '/elements/lib/images/twitter/twitterbird.png" /> ';
               echo wp_kses( apply_filters( 'cyberchimps_tweets_empty_message', '<p>'.__('No tweets to display', 'cyberchimps' ).'</p>' ), array( 'p' => array() ) );
             }
             ?>

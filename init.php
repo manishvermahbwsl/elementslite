@@ -18,20 +18,27 @@
 
 // Load style for elements
 function cyberchimps_add_elements_style() {
-	wp_register_style( 'elements_style', get_template_directory_uri() . '/elements/lib/css/elements.css' );
+
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	
+	wp_register_style( 'elements_style', $directory_uri . '/elements/lib/css/elements.css' );
 	wp_enqueue_style('elements_style');
 	
-	wp_register_script( 'elements_js', get_template_directory_uri() . '/elements/lib/js/elements.js' );
+	wp_register_script( 'elements_js', $directory_uri . '/elements/lib/js/elements.js' );
 	wp_enqueue_script( 'elements_js', array( 'jquery' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style' );
 
 // Load elements
-	require_once( get_template_directory() . '/elements/portfolio-lite.php' );
-	require_once( get_template_directory() . '/elements/slider-lite.php' );
-	require_once( get_template_directory() . '/elements/boxes.php' );
-	require_once( get_template_directory() . '/elements/twitter-bar.php' );
+	// Set directory path
+	$directory_path = get_template_directory();
+	
+	require_once( $directory_path . '/elements/portfolio-lite.php' );
+	require_once( $directory_path . '/elements/slider-lite.php' );
+	require_once( $directory_path . '/elements/boxes.php' );
+	require_once( $directory_path . '/elements/twitter-bar.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {

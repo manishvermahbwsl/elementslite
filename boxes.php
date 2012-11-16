@@ -89,6 +89,9 @@ add_action( 'admin_head', 'cyberchimps_box_limit' );
 // Define content for boxes
 function cyberchimps_boxes_render_display() {
 	
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	
 	// Intialize box counter
 	$box_counter = 1;
 	
@@ -140,7 +143,7 @@ function cyberchimps_boxes_render_display() {
 			else: ?>
 				<div class="box span4">
 					<a href="http://cyberchimps.com" class="box-link">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box1_image', '/elements/lib/images/boxes/slidericon.png' ); ?>" alt="CyberChimps Slider" />
+						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box1_image', '/elements/lib/images/boxes/slidericon.png' ); ?>" alt="CyberChimps Slider" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Responsive iFeature Pro Slider', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'The Responsive iFeature Pro Slider now adjusts dynamically when being viewed by a mobile device such as an iPhone or iPad. It also includes image resizing, and thumbnails.', 'cyberchimps' ); ?></p>
@@ -148,7 +151,7 @@ function cyberchimps_boxes_render_display() {
         
         <div class="box span4">
 					<a href="http://cyberchimps.com" class="box-link">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box2_image', '/elements/lib/images/boxes/blueprint.png' ); ?>" alt="CyberChimps Blueprint" />
+						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box2_image', '/elements/lib/images/boxes/blueprint.png' ); ?>" alt="CyberChimps Blueprint" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Responsive Design', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'With Responsive Design, and iFeature Pro your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.', 'cyberchimps' ); ?></p>
@@ -156,7 +159,7 @@ function cyberchimps_boxes_render_display() {
         
         <div class="box span4">
 					<a href="http://cyberchimps.com" class="box-link">
-						<img class="box-image" src="<?php echo get_template_directory_uri(); ?><?php echo apply_filters( 'cyberchimps_box3_image', '/elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
+						<img class="box-image" src="<?php echo $directory_uri; ?><?php echo apply_filters( 'cyberchimps_box3_image', '/elements/lib/images/boxes/docs.png' ); ?>" alt="CyberChimps Help" />
           </a>
 					<h2 class="box-widget-title"><?php _e( 'Excellent Support', 'cyberchimps' ); ?></h2>
 					<p><?php _e( 'We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a support forum, and precise documentation.', 'cyberchimps' ); ?></p>
