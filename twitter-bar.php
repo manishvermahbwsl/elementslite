@@ -52,14 +52,14 @@ if ( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 	
 			if( is_page() ) {
 				$user_details = array();
-				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : 'CyberChimps';
+				$user_details['screen_name'] = (get_post_meta($post->ID, 'cyberchimps_twitter_handle', true)) ? get_post_meta($post->ID, 'cyberchimps_twitter_handle', true) : apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' );
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] =  '1';
 			}
 			else {
 				$user_details = array();
-				$user_details['screen_name'] = ( $this->options['twitter_handle'] != '' ) ? $this->options['twitter_handle'] : 'CyberChimps';
+				$user_details['screen_name'] = ( $this->options['twitter_handle'] != '' ) ? $this->options['twitter_handle'] : apply_filters( 'cyberchimps_twitter_handle_filter', 'CyberChimps' );
 				$user_details['count'] = '1';
 				$user_details['published_when'] = '1';
 				$user_details['exclude_replies'] = '1';				
