@@ -31,19 +31,19 @@ function cyberchimps_boxes_lite_content() {
 	if ( is_page() ) {
 	
 		// Getting Image URL for each box
-		$img1 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_one' , true);
-		$img2 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_two' , true);
-		$img3 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_three' , true);
+		$img1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one' , true);
+		$img2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two' , true);
+		$img3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three' , true);
 		
 		// Getting URL of custom link
-		$url1 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_one_url' , true);
-		$url2 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_two_url' , true);
-		$url3 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_three_url' , true);
+		$url1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one_link' , true);
+		$url2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two_link' , true);
+		$url3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three_link' , true);
 	
 		// Getting text for each box
-		$text1 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_one_text' , true);
-		$text2 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_two_text' , true);
-		$text3 = get_post_meta($post->ID, 'cyberchimps_boxes_lite_image_three_text' , true);
+		$text1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one_text' , true);
+		$text2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two_text' , true);
+		$text3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three_text' , true);
 		
 	}
 	
