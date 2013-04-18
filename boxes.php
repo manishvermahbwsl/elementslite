@@ -26,46 +26,22 @@ function cyberchimps_boxes_lite_content() {
 
 	// call globals
 	global $post;
+	
+	// Getting Image URL for each box
+	$img1 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_one');
+	$img2 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_two');
+	$img3 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_three');
+	
+	// Getting URL of custom link
+	$url1 = cyberchimps_option('cyberchimps_blog_boxes_link_url_one');
+	$url2 = cyberchimps_option('cyberchimps_blog_boxes_link_url_two');
+	$url3 = cyberchimps_option('cyberchimps_blog_boxes_link_url_three');
 
-	// Getting options of boxes-lite when added to page
-	if ( is_page() ) {
-	
-		// Getting Image URL for each box
-		$img1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one' , true);
-		$img2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two' , true);
-		$img3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three' , true);
-		
-		// Getting URL of custom link
-		$url1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one_link' , true);
-		$url2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two_link' , true);
-		$url3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three_link' , true);
-	
-		// Getting text for each box
-		$text1 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_one_text' , true);
-		$text2 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_two_text' , true);
-		$text3 = get_post_meta($post->ID, 'cyberchimps_box_lite_image_three_text' , true);
-		
-	}
-	
-	// Getting options of boxes-lite when added to blog
-	else {
-	
-		// Getting Image URL for each box
-		$img1 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_one');
-		$img2 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_two');
-		$img3 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_three');
-		
-		// Getting URL of custom link
-		$url1 = cyberchimps_option('cyberchimps_blog_boxes_link_url_one');
-		$url2 = cyberchimps_option('cyberchimps_blog_boxes_link_url_two');
-		$url3 = cyberchimps_option('cyberchimps_blog_boxes_link_url_three');
-	
-		// Getting text for each box
-		$text1 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_one_text');
-		$text2 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_two_text');
-		$text3 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_three_text');
-	
-	}
+	// Getting text for each box
+	$text1 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_one_text');
+	$text2 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_two_text');
+	$text3 = cyberchimps_option('cyberchimps_blog_boxes_lite_image_three_text');
+
 ?>
 
 	<!-- Start of markup for boxes lite element -->
