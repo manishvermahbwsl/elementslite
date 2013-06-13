@@ -23,9 +23,6 @@ add_action( 'boxes_lite', 'cyberchimps_boxes_lite_content' );
 
 // Defining content of the boxes-lite element
 function cyberchimps_boxes_lite_content() {
-
-	// call globals
-	global $post;
 	
 	// Getting Image URL for each box
 	$img1 = cyberchimps_get_option('cyberchimps_blog_boxes_lite_image_one');
