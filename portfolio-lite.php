@@ -144,7 +144,7 @@ function cyberchimps_portfolio_lite_content() {
      <div id="gallery" class="span12">
 			
 			<!-- Display the title -->
-			<h2 class="entry-title"><?php echo esc_html( $title_output ); ?></h2>
+			<h1 class="entry-title"><?php echo esc_html( $title_output ); ?></h1>
 			
 			<ul class="row-fluid">
 			
