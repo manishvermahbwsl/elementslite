@@ -70,7 +70,19 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 
             $latest_tweet = self::cyberchimps_get_tweets( $query_arg, $auth_arg );
 
-            if( is_wp_error( $latest_tweet ) ) {
+			// Display error message if there is an error retrieving tweets
+			if( !is_array($latest_tweet) && $latest_tweet == 'Error retrieving tweets' ) {
+			?>
+				 <div id="twitter-container" class="row-fluid">
+                    <div id="twitter-bar" class="span12">
+                        <div id="twitter-text">
+							<?php echo $latest_tweet; ?>
+						</div>
+					</div>
+				</div>
+			<?php
+			}
+            else if( is_wp_error( $latest_tweet ) ) {
                 echo $latest_tweet->get_error_code() . ' - ' . $latest_tweet->get_error_message();
             }
             else {
@@ -118,6 +130,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
             // Build request URL
             $request_url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
             $request_url = add_query_arg( $query_arg, $request_url );
+            $request_url = add_query_arg( $auth_arg, $request_url );
 
             // Generate key
             $key = 'cyberchimps_twitter_' . md5( $request_url );
