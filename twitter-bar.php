@@ -23,6 +23,9 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
 
         protected static $instance;
         public $options;
+        public $twitter_errors;
+        private $query_arg;
+        private $query_auth;
 
         /* Static Singleton Factory Method */
         public static function instance() {
@@ -40,11 +43,23 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
          * @return void
          */
         protected function __construct() {
+
+            // Set up hooks, options and filters
             add_action( 'twitterbar_section', array( $this, 'render_display' ) );
             $this->options = get_option( 'cyberchimps_options' );
-
+            add_action( 'cyberchimps_twitter_api_section_before', array( $this, 'show_twitter_errors' ) );
+            add_action( 'cyberchimps_options_before_save', array( $this, 'twitter_change_fields' ), 10, 1 );
             add_filter( 'cyberchimps_sections_filter', array( $this, 'twitter_option_section' ), 1 );
             add_filter( 'cyberchimps_field_filter', array( $this, 'twitter_option_fields' ), 1 );
+
+            // set up auth and query variables
+            $this->query_arg['count']              = 1;
+            $this->query_arg['exclude_replies']    = true;
+            $this->query_arg['include_rts']        = false;
+            $this->auth_arg['access_token']        = $this->options['twitter_access_token'];
+            $this->auth_arg['access_token_secret'] = $this->options['twitter_access_token_secret'];
+            $this->auth_arg['consumer_key']        = $this->options['twitter_consumer_key'];
+            $this->auth_arg['consumer_secret']     = $this->options['twitter_consumer_secret'];
         }
 
         /**
@@ -52,42 +67,31 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
          */
         public function render_display() {
 
-            // Set twitter Api credentials and other options.
-            $query_arg                       = array();
-            $auth_arg                        = array();
-            $query_arg['count']              = 1;
-            $query_arg['exclude_replies']    = true;
-            $query_arg['include_rts']        = false;
-            $auth_arg['access_token']        = $this->options['twitter_access_token'];
-            $auth_arg['access_token_secret'] = $this->options['twitter_access_token_secret'];
-            $auth_arg['consumer_key']        = $this->options['twitter_consumer_key'];
-            $auth_arg['consumer_secret']     = $this->options['twitter_consumer_secret'];
-
             // Get twitter handle.
+            $screen_name              		= $this->options['twitter_handle'];
+            $this->query_arg['screen_name'] = ( $screen_name != '' ) ? $screen_name : 'CyberChimps';
 
-            $screen_name              = $this->options['twitter_handle'];
-            $query_arg['screen_name'] = ( $screen_name != '' ) ? $screen_name : 'CyberChimps';
+            $latest_tweet = self::cyberchimps_get_tweets( $this->query_arg, $this->auth_arg );
 
-            $latest_tweet = self::cyberchimps_get_tweets( $query_arg, $auth_arg );
-
-			// Display error message if there is an error retrieving tweets
-			if( !is_array($latest_tweet) && $latest_tweet == 'Error retrieving tweets' ) {
-			?>
-				 <div id="twitter-container" class="row-fluid">
+            // Display error message if there is an error retrieving tweets
+            if( !$latest_tweet || is_string( $latest_tweet ) || array_key_exists( 'errors', $latest_tweet ) ) {
+                ?>
+                <div id="twitter-container" class="row-fluid">
                     <div id="twitter-bar" class="span12">
                         <div id="twitter-text">
-							<?php echo $latest_tweet; ?>
-						</div>
-					</div>
-				</div>
-			<?php
-			}
-            else if( is_wp_error( $latest_tweet ) ) {
+                            <?php _e( 'Error retrieving tweets', 'cyberchimps_elements' ); ?>
+                        </div>
+                    </div>
+                </div>
+            <?php
+            }
+            elseif( is_wp_error( $latest_tweet ) ) {
                 echo $latest_tweet->get_error_code() . ' - ' . $latest_tweet->get_error_message();
             }
             else {
-				$image_url = get_template_directory_uri() . '/elements/lib/images/twitter/twitterbird.png';
-            ?>
+                // Set variables
+                $image_url = get_template_directory_uri() . '/elements/lib/images/twitter/twitterbird.png';
+                ?>
                 <div id="twitter-container" class="row-fluid">
                     <div id="twitter-bar" class="span12">
                         <div id="twitter-text">
@@ -103,7 +107,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                                 echo '<img src="' . esc_url( $image_url ) . '" />';
                                 echo '<p><a href="' . esc_url( $user_permalink ) . '"> ';
                                 echo $screen_name . '</a> - ' . wp_kses( $tweet_text, array( 'a' => array( 'href' => array() ) ) ) . ' <small><a href="' . $tweet_permalink . '">' . human_time_diff( strtotime( $latest_tweet[0]['created_at'] ), current_time( 'timestamp' ) ) . ' ago</a></small></p>';
-                            }
+							}
                             else {
                                 echo apply_filters( 'cyberchimps_tweets_empty_message', '<p>' . __( 'No tweets to display', 'cyberchimps_elements' ) . '</p>' );
                             }
@@ -242,7 +246,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
          */
         public function twitter_option_fields( $orig ) {
 
-            $new_field[][0] = array(
+            $new_field[][1] = array(
                 'name'    => __( 'Edit Twitter API', 'cyberchimps_elements' ),
                 'id'      => 'twitter_edit',
                 'type'    => 'toggle',
@@ -261,7 +265,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
             $help_text .= '<li>' . __( 'Save your options', 'cyberchimps_elements' ) . '</li>';
             $help_text .= '</ol>';
 
-            $new_field[][1] = array(
+            $new_field[][2] = array(
                 'name'    => __( 'Create a Twitter App', 'cyberchimps_elements' ),
                 'id'      => 'twitter_app_help',
                 'class'   => 'twitter_edit_toggle',
@@ -275,6 +279,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                 'name'    => __( 'Consumer Key', 'cyberchimps_elements' ),
                 'id'      => 'twitter_consumer_key',
                 'class'   => 'twitter_edit_toggle',
+                'std'     => '',
                 'type'    => 'text',
                 'section' => 'cyberchimps_twitter_api_section',
                 'heading' => 'cyberchimps_blog_heading'
@@ -284,6 +289,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                 'name'    => __( 'Consumer Secret', 'cyberchimps_elements' ),
                 'id'      => 'twitter_consumer_secret',
                 'class'   => 'twitter_edit_toggle',
+                'std'     => '',
                 'type'    => 'text',
                 'section' => 'cyberchimps_twitter_api_section',
                 'heading' => 'cyberchimps_blog_heading'
@@ -293,6 +299,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                 'name'    => __( 'Access Token', 'cyberchimps_elements' ),
                 'id'      => 'twitter_access_token',
                 'class'   => 'twitter_edit_toggle',
+                'std'     => '',
                 'type'    => 'text',
                 'section' => 'cyberchimps_twitter_api_section',
                 'heading' => 'cyberchimps_blog_heading'
@@ -302,6 +309,7 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                 'name'    => __( 'Access Token Secret', 'cyberchimps_elements' ),
                 'id'      => 'twitter_access_token_secret',
                 'class'   => 'twitter_edit_toggle',
+                'std'     => '',
                 'type'    => 'text',
                 'section' => 'cyberchimps_twitter_api_section',
                 'heading' => 'cyberchimps_blog_heading'
@@ -315,11 +323,82 @@ if( !class_exists( 'CyberChimpsTwitterBar' ) ) {
                 'section' => 'cyberchimps_twitter_api_section',
                 'heading' => 'cyberchimps_blog_heading'
             );
-
+			
             $new_fields = cyberchimps_array_field_organizer( $orig, $new_field );
 
             return $new_fields;
         }
+
+        /**
+         * Watches the twitter values compared to the posted types and deletes the transient if they are different, allowing it to show the error message
+         * We use this so that it doesn't keep checking the Twitter API, only on changes and when the transient runs out
+         *
+         * @param $post is the $_POST data before theme options are saved
+         *
+         * @uses cyberchimps_options_before_save hook
+         */
+        public function twitter_change_fields( $post ) {
+
+            if( $post['twitter_consumer_key'] != $this->options['twitter_consumer_key'] || $post['twitter_consumer_secret'] != $this->options['twitter_consumer_secret']
+                || $post['twitter_access_token'] != $this->options['twitter_access_token'] || $post['twitter_access_token_secret'] != $this->options['twitter_access_token_secret'] ) {
+                delete_transient( 'cyberchimps_twitter_success' );
+            }
+
+        }
+        /**
+         * Get errors returned from Twitter
+         *
+         * @return array
+         */
+        protected function get_twitter_errors() {
+            // Make sure the user wants to set up Twitter
+            if( $this->options['twitter_consumer_key'] != '' || $this->options['twitter_consumer_secret'] != ''
+                || $this->options['twitter_access_token'] != '' || $this->options['twitter_access_token_secret'] != '' ) {
+
+                // If there is no twitter transient set then retest for errors
+                if( !get_transient( 'cyberchimps_twitter_success' ) ) {
+
+                    // Connect to Twitter to check we are connected
+                    $errors = self::cyberchimps_get_tweets( $this->query_arg, $this->auth_arg );
+
+                    // If the Twitter call returns something
+                    if( is_array( $errors ) ) {
+
+                        // If it returns and error return these errors
+                        if( array_key_exists( 'errors', $errors ) ) {
+                            return $errors;
+                        }
+                        // Else we have success and set the transient so we check the API once a day
+                        else {
+                            set_transient( 'cyberchimps_twitter_success', 'connected', 60 * 60 * 24 );
+                        }
+                    }
+                }
+            }
+
+        }
+
+        /**
+         * Echos the error message if there is one
+         */
+        public function show_twitter_errors() {
+            $errors = $this->get_twitter_errors();
+
+            if( $errors ) {
+                $display = '<div class="alert alert-error">';
+                $display .= '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+                $display .= '<h4>' . __( 'Error', 'cyberchimps_elements' ) . '</h4>';
+                $display .= '<ul>';
+                foreach( $errors['errors'] as $error ) {
+                    $display .= '<li>' . esc_html( $error['message'] ) . '</li>';
+                }
+                $display .= '</ul>';
+                $display .= '</div>';
+
+                echo $display;
+            }
+        }
+
     }
 }
 CyberChimpsTwitterBar::instance();
