@@ -135,7 +135,7 @@ function cyberchimps_portfolio_lite_page_options() {
      * configure your meta box
      */
     $page_config = array(
-        'id'             => 'portfolio_lite_page_options', // meta box id, unique per meta box
+        'id'             => 'portfolio_lite_options', // meta box id, unique per meta box
         'title'          => __( 'Portfolio Lite Options', 'cyberchimps_elements' ), // meta box title
         'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
         'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
