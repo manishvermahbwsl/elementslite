@@ -32,14 +32,11 @@ function cyberchimps_slider_lite_page_options() {
     $page_fields = array(
         // Image one
         array(
-            'type'  => 'image',
+            'type'  => 'single_image',
             'id'    => 'cyberchimps_slider_lite_slide_one_image',
             'class' => '',
             'name'  => __( 'Slide One Image', 'cyberchimps_elements' ),
-            'std'   => array(
-                'url' => $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/elements/lib/images/slider/slide1.jpg' ),
-                'id'  => 'slider_lite_1'
-            )
+            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'  => 'text',
@@ -49,14 +46,11 @@ function cyberchimps_slider_lite_page_options() {
             'std'   => 'http://cyberchimps.com'
         ),
         array(
-            'type'  => 'image',
+            'type'  => 'single_image',
             'id'    => 'cyberchimps_slider_lite_slide_two_image',
             'class' => '',
             'name'  => __( 'Slide Two Image', 'cyberchimps_elements' ),
-            'std'   => array(
-                'url' => $directory . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' ),
-                'id'  => 'slider_lite_2'
-            )
+            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'  => 'text',
@@ -66,14 +60,11 @@ function cyberchimps_slider_lite_page_options() {
             'std'   => 'http://cyberchimps.com'
         ),
 array(
-            'type'  => 'image',
+            'type'  => 'single_image',
             'id'    => 'cyberchimps_slider_lite_slide_three_image',
             'class' => '',
             'name'  => __( 'Slide Three Image', 'cyberchimps_elements' ),
-            'std'   => array(
-                'url' => $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' ),
-                'id'  => 'slider_lite_3'
-            )
+            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'  => 'text',
