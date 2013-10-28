@@ -55,7 +55,7 @@ function cyberchimps_slider_lite_content() {
 	$i = 0;
 	?>
 	<div class="row-fluid">
-	<div id="slider-lite" class="carousel slide">
+	<div id="slider_lite" class="carousel slide">
 		<div class="carousel-inner">
 			<?php foreach ($slides as $slide): ?>
 			<?php if ($slide['img'] != ''): ?>
@@ -75,8 +75,8 @@ function cyberchimps_slider_lite_content() {
 			</div>
 
 			<!-- Slider nav -->
-			<a class="carousel-control left slider-lite-left" href="#slider-lite" data-slide="prev">&lsaquo;</a>
-			<a class="carousel-control right slider-lite-right" href="#slider-lite" data-slide="next">&rsaquo;</a>
+			<a class="carousel-control left slider-lite-left" href="#slider_lite" data-slide="prev">&lsaquo;</a>
+			<a class="carousel-control right slider-lite-right" href="#slider_lite" data-slide="next">&rsaquo;</a>
 
 		</div>
 	</div>
