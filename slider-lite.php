@@ -36,7 +36,7 @@ function cyberchimps_slider_lite_page_options() {
             'id'    => 'cyberchimps_slider_lite_slide_one_image',
             'class' => '',
             'name'  => __( 'Slide One Image', 'cyberchimps_elements' ),
-            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/elements/lib/images/slider/slide1.jpg' )
+            'std'   => $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/images/branding/slide1.jpg' )
         ),
         array(
             'type'  => 'text',
