@@ -30,7 +30,7 @@
 
 #portfolio_wrap {
 	position: relative;
-
+	list-style: none;
 }
 
 #portfolio_wrap:hover div.portfolio_caption {

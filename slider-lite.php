@@ -131,7 +131,7 @@ function cyberchimps_slider_lite_content() {
 	}
 	$i = 0;
 	?>
-	<div class="row-fluid">
+	<div class="row">
 	<div id="slider_lite" class="carousel slide">
 		<div class="carousel-inner">
 			<?php foreach ($slides as $slide): ?>
@@ -157,7 +157,7 @@ function cyberchimps_slider_lite_content() {
 
 		</div>
 	</div>
-	<!-- row-fluid -->
+	<!-- row -->
 <?php
 }
 

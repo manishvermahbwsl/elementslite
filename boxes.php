@@ -44,9 +44,9 @@ function cyberchimps_boxes_lite_content() {
 	?>
 
 	<!-- Start of markup for boxes lite element -->
-	<div id="widget_boxes_container" class="row-fluid">
+	<div id="widget_boxes_container" class="row">
 		<div class="boxes">
-			<div class="box span4">
+			<div class="box col-md-4">
 				<?php if( $url1 != '' && $img1 != '' ): ?>
 					<a href="<?php echo esc_url( $url1 ); ?>" class="box-link">
 						<img class="box-image" src="<?php echo esc_url( $img1 ); ?>"/>
@@ -62,7 +62,7 @@ function cyberchimps_boxes_lite_content() {
 			</div>
 			<!--end box1-->
 
-			<div class="box span4">
+			<div class="box col-md-4">
 				<?php if( $url2 != '' && $img2 != '' ): ?>
 					<a href="<?php echo esc_url( $url2 ); ?>" class="box-link">
 						<img class="box-image" src="<?php echo esc_url( $img2 ); ?>"/>
@@ -78,7 +78,7 @@ function cyberchimps_boxes_lite_content() {
 			</div>
 			<!--end box2-->
 
-			<div class="box span4">
+			<div class="box col-md-4">
 				<?php if( $url3 != '' && $img3 != '' ): ?>
 					<a href="<?php echo esc_url( $url3 ); ?>" class="box-link">
 						<img class="box-image" src="<?php echo esc_url( $img3 ); ?>"/>
@@ -95,7 +95,7 @@ function cyberchimps_boxes_lite_content() {
 			<!--end box3-->
 		</div>
 		<!-- end boxes -->
-	</div><!-- end row-fluid -->
+	</div><!-- end row -->
 	<!-- End of markup for boxes lite element -->
 <?php
 }
