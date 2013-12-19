@@ -20,17 +20,26 @@ if( !defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
+// Add parallax library.
 add_action( 'wp_enqueue_scripts', 'cyberchimps_parallax_scripts' );
-
 function cyberchimps_parallax_scripts() {
 
 	// Add parallax js library.
 	wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/elements/lib/js/jquery.parallax.js', array( 'jquery' ) );
 }
+
+// Set parallax to individual elements by checking toggle.
+add_action('wp_footer', 'cyberchimps_parallax_setings');
+function cyberchimps_parallax_setings() {
 ?>
-
-
-
+	<script>
+		jQuery(document).ready(function() {
+			jQuery('.container-full-width').parallax('50%', 0.4);
+			jQuery('body').parallax('50%', 0.7);
+		});
+	</script>
+<?php
+} ?>
 <style type="text/css">
 	#boxes_lite_section {
 		background: url("<?php echo get_template_directory_uri() . '/elements/lib/images/parallax.jpg' ?>");
