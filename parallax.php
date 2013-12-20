@@ -34,7 +34,7 @@ function cyberchimps_parallax_fields( $original ) {
 
 	// Slider parallax toggle.
 	$new_field[][2]	= array(
-		'name'		=> __( 'Parallax', 'cyberchimps_core' ),
+		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_slider_parallax',
 		'type'		=> 'toggle',
 		'section'	=> 'cyberchimps_blog_slider_lite_section',
@@ -43,8 +43,8 @@ function cyberchimps_parallax_fields( $original ) {
 	
 	// Slider parallax image.
 	$new_field[][3]	= array(
-		'name'		=> __( 'Background image for parallax', 'cyberchimps_core' ),
-		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_core' ),
+		'name'		=> __( 'Background image for parallax', 'cyberchimps_elements' ),
+		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_slider_parallax_image',
 		'class'		=> 'cyberchimps_blog_slider_parallax_toggle',
 		'type'		=> 'upload',
@@ -54,7 +54,7 @@ function cyberchimps_parallax_fields( $original ) {
 	
 	// Portfolio parallax toggle.
 	$new_field[][2]	= array(
-		'name'		=> __( 'Parallax', 'cyberchimps_core' ),
+		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_portfolio_parallax',
 		'type'		=> 'toggle',
 		'section'	=> 'cyberchimps_blog_portfolio_lite_section',
@@ -63,8 +63,8 @@ function cyberchimps_parallax_fields( $original ) {
 	
 	// Portfolio parallax image.
 	$new_field[][3]	= array(
-		'name'		=> __( 'Background image for parallax', 'cyberchimps_core' ),
-		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_core' ),
+		'name'		=> __( 'Background image for parallax', 'cyberchimps_elements' ),
+		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_portfolio_parallax_image',
 		'class'		=> 'cyberchimps_blog_portfolio_parallax_toggle',
 		'type'		=> 'upload',
@@ -74,7 +74,7 @@ function cyberchimps_parallax_fields( $original ) {
 	
 	// Boxes parallax toggle.
 	$new_field[][2]	= array(
-		'name'		=> __( 'Parallax', 'cyberchimps_core' ),
+		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_boxes_parallax',
 		'type'		=> 'toggle',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
@@ -83,13 +83,23 @@ function cyberchimps_parallax_fields( $original ) {
 	
 	// Boxes parallax image.
 	$new_field[][3]	= array(
-		'name'		=> __( 'Background image for parallax', 'cyberchimps_core' ),
-		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_core' ),
+		'name'		=> __( 'Background image for parallax', 'cyberchimps_elements' ),
+		'desc'		=> __( 'Enter URL or upload file', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_boxes_parallax_image',
 		'class'		=> 'cyberchimps_blog_boxes_parallax_toggle',
 		'type'		=> 'upload',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
+	);
+	
+	// Body parallax toggle.
+	$new_field[][1]	= array(
+		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
+		'id'		=> 'cyberchimps_body_parallax',
+		'desc'		=> __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'cyberchimps_elements' ),
+		'type'		=> 'toggle',
+		'section'	=> 'cyberchimps_custom_layout_section',
+		'heading'	=> 'cyberchimps_design_heading'
 	);
 	
 	$new_fields = cyberchimps_array_field_organizer( $original, $new_field );
@@ -111,6 +121,9 @@ function cyberchimps_parallax_setings() {
 	// Get boxes parallax options.
 	$boxes_parallax_toggle = cyberchimps_get_option( 'cyberchimps_blog_boxes_parallax', 1 );
 	$boxes_parallax_image = cyberchimps_get_option( 'cyberchimps_blog_boxes_parallax_image' );
+	
+	// Get boxes parallax options.
+	$body_parallax_toggle = cyberchimps_get_option( 'cyberchimps_body_parallax', 1 );
 ?>
 	<script>
 		jQuery(document).ready(function() {
@@ -129,8 +142,12 @@ function cyberchimps_parallax_setings() {
 			if( $boxes_parallax_toggle && $boxes_parallax_image ) { ?>
 				jQuery('#boxes_lite_section').parallax('50%', 0.5);
 				jQuery('#boxes_lite_section').css( 'background', 'url("<?php echo $boxes_parallax_image;?>")' );
+			<?php }
+			// Add parallax to body.
+			if( $body_parallax_toggle ) { ?>
+				jQuery('body').parallax('50%', 0.7);
 			<?php } ?>
-			jQuery('body').parallax('50%', 0.7);
+			
 		});
 	</script>
 <?php
