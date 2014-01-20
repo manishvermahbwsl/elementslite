@@ -37,6 +37,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_slider_parallax',
 		'type'		=> 'toggle',
+		'std'       => 1,
 		'section'	=> 'cyberchimps_blog_slider_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -48,6 +49,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'id'		=> 'cyberchimps_blog_slider_parallax_image',
 		'class'		=> 'cyberchimps_blog_slider_parallax_toggle',
 		'type'		=> 'upload',
+		'std'       => get_template_directory_uri() . '/images/parallax/rocks.jpg',
 		'section'	=> 'cyberchimps_blog_slider_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -57,6 +59,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_portfolio_parallax',
 		'type'		=> 'toggle',
+		'std'       => 1,
 		'section'	=> 'cyberchimps_blog_portfolio_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -68,6 +71,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'id'		=> 'cyberchimps_blog_portfolio_parallax_image',
 		'class'		=> 'cyberchimps_blog_portfolio_parallax_toggle',
 		'type'		=> 'upload',
+		'std'       => get_template_directory_uri() . '/images/parallax/trees.jpg',
 		'section'	=> 'cyberchimps_blog_portfolio_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -77,6 +81,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'name'		=> __( 'Parallax', 'cyberchimps_elements' ),
 		'id'		=> 'cyberchimps_blog_boxes_parallax',
 		'type'		=> 'toggle',
+		'std'       => 1,
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -88,6 +93,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'id'		=> 'cyberchimps_blog_boxes_parallax_image',
 		'class'		=> 'cyberchimps_blog_boxes_parallax_toggle',
 		'type'		=> 'upload',
+		'std'       => get_template_directory_uri() . '/images/parallax/sun.jpg',
 		'section'	=> 'cyberchimps_blog_boxes_lite_section',
 		'heading'	=> 'cyberchimps_blog_heading'
 	);
@@ -98,6 +104,7 @@ function cyberchimps_parallax_fields( $original ) {
 		'id'		=> 'cyberchimps_body_parallax',
 		'desc'		=> __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'cyberchimps_elements' ),
 		'type'		=> 'toggle',
+		'std'       => 1,
 		'section'	=> 'cyberchimps_custom_layout_section',
 		'heading'	=> 'cyberchimps_design_heading'
 	);
