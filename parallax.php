@@ -175,7 +175,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 					// Add parallax to slider.
 					if( $slider_parallax_toggle && $slider_parallax_image ) { ?>
 					jQuery('#slider_lite_section').css({
-						'background': 'url("<?php echo $slider_parallax_image;?>")',
+						'background-image': 'url("<?php echo $slider_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#slider_lite_section').parallax('50%', 0.5);
@@ -183,7 +183,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 					// Add parallax to portfolio.
 					if( $portfolio_parallax_toggle && $portfolio_parallax_image ) { ?>
 					jQuery('#portfolio_lite_section').css({
-						'background': 'url("<?php echo $portfolio_parallax_image;?>")',
+						'background-image': 'url("<?php echo $portfolio_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#portfolio_lite_section').parallax('50%', 0.5);
@@ -191,7 +191,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 					// Add parallax to boxes.
 					if( $boxes_parallax_toggle && $boxes_parallax_image ) { ?>
 					jQuery('#boxes_lite_section').css({
-						'background': 'url("<?php echo $boxes_parallax_image;?>")',
+						'background-image': 'url("<?php echo $boxes_parallax_image;?>")',
 						'background-size': '100%'
 					});
 					jQuery('#boxes_lite_section').parallax('50%', 0.5);
