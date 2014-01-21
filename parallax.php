@@ -198,7 +198,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 					<?php }
 					// Add parallax to body.
 					if( $body_parallax_toggle ) { ?>
-					jQuery('body').parallax('50%', 0.3);
+					jQuery('body').parallax('50%', -0.5);
 					<?php } ?>
 
 				});
