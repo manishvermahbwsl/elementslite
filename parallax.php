@@ -86,7 +86,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_slider_parallax_image',
 				'class'   => 'cyberchimps_blog_slider_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/pencils.jpg',
+				'std'     => get_template_directory_uri() . '/images/parallax/sun.jpg',
 				'section' => 'cyberchimps_blog_slider_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
@@ -108,7 +108,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_portfolio_parallax_image',
 				'class'   => 'cyberchimps_blog_portfolio_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/drawing.jpg',
+				'std'     => get_template_directory_uri() . '/images/parallax/trees.jpg',
 				'section' => 'cyberchimps_blog_portfolio_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
@@ -130,7 +130,7 @@ if ( !class_exists( 'CyberchimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_boxes_parallax_image',
 				'class'   => 'cyberchimps_blog_boxes_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/desk.jpg',
+				'std'     => get_template_directory_uri() . '/images/parallax/rocks.jpg',
 				'section' => 'cyberchimps_blog_boxes_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
