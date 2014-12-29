@@ -84,6 +84,7 @@ function cyberchimps_element_drop_fields( $fields ) {
 add_filter( 'cyberchimps_field_filter', 'cyberchimps_element_drop_fields', 2 );
 
 function cyberchimps_install_plugins() {
+
 	$plugins = array(
 
 		// This is an example of how to include a plugin pre-packaged with a theme
@@ -101,14 +102,20 @@ function cyberchimps_install_plugins() {
 			'name'     => 'FooBox Image Lightbox', // The plugin name
 			'slug'     => 'foobox-image-lightbox', // The plugin slug (typically the folder name)
 			'required' => false
-		),
-		array(
-			'name'     => 'iFeature Slider', // The plugin name
-			'slug'     => 'ifeature-slider', // The plugin slug (typically the folder name)
-			'required' => false
 		)
 	);
 
+	// Check if slider pro plugin already installed.
+	$existing_plugins = get_plugins();
+	if( !array_key_exists( 'ifeatureslider/ifeatureslider.php', $existing_plugins ) ) {
+	
+		$plugins[] = array(
+				'name'     => 'iFeature Slider', // The plugin name
+				'slug'     => 'ifeature-slider', // The plugin slug (typically the folder name)
+				'required' => false
+		);
+	}	
+		
 	// Change this to your theme text domain, used for internationalising strings
 	$theme_text_domain = 'cyberchimps_elements';
 
