@@ -102,6 +102,16 @@ function cyberchimps_install_plugins() {
 			'name'     => 'FooBox Image Lightbox', // The plugin name
 			'slug'     => 'foobox-image-lightbox', // The plugin slug (typically the folder name)
 			'required' => false
+		),
+		array(
+			'name'     => 'Wp Product Review', // The plugin name
+			'slug'     => 'wp-product-review', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+		array(
+			'name'     => 'Tweet Old Post', // The plugin name
+			'slug'     => 'tweet-old-post', // The plugin slug (typically the folder name)
+			'required' => false
 		)
 	);
 
