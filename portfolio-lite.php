@@ -217,34 +217,32 @@ function cyberchimps_portfolio_lite_content() {
 	else {
 
 		// Geting title option
-		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
-		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
+		$title_enable = get_theme_mod( 'cyberchimps_blog_portfolio_title_toggle', 1 );
+		$title        = get_theme_mod( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
 
-		$portfolio_default_image = get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg';
-		
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one', $portfolio_default_image );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two', $portfolio_default_image );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three', $portfolio_default_image );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four', $portfolio_default_image );
+		$img1 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_one', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img2 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_two', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img3 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_three', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img4 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_four', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img4', '/cyberchimps/lib/images/portfolio.jpg' ) );
 
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
-		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption', 'CyberChimps' );
-		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption', 'CyberChimps' );
-		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption', 'CyberChimps' );
+		$caption1 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
+		$caption2 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_two_caption', 'CyberChimps' );
+		$caption3 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_three_caption', 'CyberChimps' );
+		$caption4 = get_theme_mod( 'cyberchimps_blog_portfolio_lite_image_four_caption', 'CyberChimps' );
 
 		// Getting Custom URL toggle
-		$url_toggle1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );
-		$url_toggle2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_two' );
-		$url_toggle3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_three' );
-		$url_toggle4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_four' );
+		$url_toggle1 = get_theme_mod( 'cyberchimps_blog_portfolio_link_toggle_one' );
+		$url_toggle2 = get_theme_mod( 'cyberchimps_blog_portfolio_link_toggle_two' );
+		$url_toggle3 = get_theme_mod( 'cyberchimps_blog_portfolio_link_toggle_three' );
+		$url_toggle4 = get_theme_mod( 'cyberchimps_blog_portfolio_link_toggle_four' );
 
 		// Getting URL of custom link
-		$url1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_one' );
-		$url2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_two' );
-		$url3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_three' );
-		$url4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_four' );
+		$url1 = get_theme_mod( 'cyberchimps_blog_portfolio_link_url_one' );
+		$url2 = get_theme_mod( 'cyberchimps_blog_portfolio_link_url_two' );
+		$url3 = get_theme_mod( 'cyberchimps_blog_portfolio_link_url_three' );
+		$url4 = get_theme_mod( 'cyberchimps_blog_portfolio_link_url_four' );
 	}
 
 	// Set the title to default value if null is supplied
