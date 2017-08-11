@@ -42,6 +42,7 @@ require_once( $directory_path . '/elements/portfolio-lite.php' );
 require_once( $directory_path . '/elements/slider-lite.php' );
 require_once( $directory_path . '/elements/boxes.php' );
 require_once( $directory_path . '/elements/testimonial.php' );
+require_once( $path_elements . 'contact-us.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
@@ -50,7 +51,8 @@ function cyberchimps_selected_elements() {
 		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
 		"blog_post_page" => __( 'Post Page', 'cyberchimps_core' ),
 		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements')
+                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements'),
+                "contact_us"	     => __( 'Contact Us', 'cyberchimps_elements')
 	);
 
 	return $options;
@@ -64,7 +66,8 @@ function cyberchimps_selected_page_elements() {
 		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
 		"page_section"   => __( 'Page', 'cyberchimps_core' ),
 		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements')
+                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements'),
+                "map_contact"	     => __( 'Contact Us', 'cyberchimps_elements')
 	);
 
 	return $options;
