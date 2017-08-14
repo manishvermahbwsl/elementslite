@@ -135,7 +135,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'type'    => 'text',
 					'id'      => 'custom_contact_title',
 					'class'   => '',
-					'name'    => __( 'Contact Section Tilte', 'cyberchimps_elements' )
+					'name'    => __( 'Contact Section Title', 'cyberchimps_elements' )
 				),
 				array(
 					'type'    => 'text',
