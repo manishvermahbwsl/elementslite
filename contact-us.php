@@ -58,7 +58,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			$custom_contact_number =	get_post_meta( $post->ID, 'custom_contact_number', true );
 			$custom_contact_email =		get_post_meta( $post->ID, 'custom_contact_email', true );
 			$contactus_element_text = 	get_post_meta( $post->ID, 'contactus_element_text', true );
-			$contact_background_image = get_post_meta( $post->ID, 'contactus_background_image', true );
+			
                         }
                         else
                         {
@@ -68,25 +68,19 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			$custom_contact_number =	cyberchimps_get_option('custom_contact_number');
 			$custom_contact_email =		cyberchimps_get_option('custom_contact_email');
 			$contactus_element_text = 	cyberchimps_get_option('contactus_element_text');
-			$contact_background_image =     cyberchimps_get_option('contactus_background_image');
+			
                         }
                           
                         ?>
-                        <?php 
-                        // set background image
-                        if($contact_background_image)
-                        {
-                        ?>
+                        
                             <style>
                                 #map_contact_section{
-                                  background-image:url('<?php echo $contact_background_image; ?>');
+                                  background-image:url('<?php echo get_template_directory_uri().'/cyberchimps/lib/images/contact_bg.jpg' ?>');
                                   background-position: center;
                                   background-size: cover;
                                 }
                             </style>
-                        <?php
-                        }
-                        ?>
+                       
                     <div id="contact_us" class="row-fluid">
                         <div class="span12">
                             <h2 class="contact_title"><?php if(!empty($custom_contact_title)){echo $custom_contact_title; }?></h2>
@@ -169,14 +163,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'name'    => __( 'Additional data', 'cyberchimps_elements' ),
 					'desc' => __('Recommended: Contact Form', 'cyberchimps_elements')
 				),
-                            array(
-					'type'    => 'single_image',
-					'id'      => 'contactus_background_image',
-					'class'   => '',
-                                        'std'     => apply_filters( 'cyberchimps_contact_bg_img', get_template_directory_uri(). '/cyberchimps/lib/images/contact_bg.jpg' ),
-					'name'    => __( 'Background Image', 'cyberchimps_elements' ),
-					'desc' => __('Enter Background Image for contact section', 'cyberchimps_elements')
-				),
+                            
                            
 
 			);
