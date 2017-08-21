@@ -52,7 +52,7 @@ function cyberchimps_selected_elements() {
 		"blog_post_page" => __( 'Post Page', 'cyberchimps_core' ),
 		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
                 "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements'),
-                "contact_us"	     => __( 'Contact Us', 'cyberchimps_elements')
+                "map_contact"	     => __( 'Contact Us', 'cyberchimps_elements')
 	);
 
 	return $options;
