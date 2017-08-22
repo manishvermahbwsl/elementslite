@@ -42,7 +42,7 @@ require_once( $directory_path . '/elements/portfolio-lite.php' );
 require_once( $directory_path . '/elements/slider-lite.php' );
 require_once( $directory_path . '/elements/boxes.php' );
 require_once( $directory_path . '/elements/testimonial.php' );
-require_once( $path_elements . 'contact-us.php' );
+require_once( $directory_path . '/elements/contact-us.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {

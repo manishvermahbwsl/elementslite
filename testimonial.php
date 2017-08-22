@@ -54,37 +54,9 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 			/*
 			 * configure your meta box
 			 */
-			$testimonial_config = array(
-				'id'             => 'testimonial_options', // meta box id, unique per meta box
-				'title'          => __( 'Featured Post Testimonial', 'cyberchimps_elements' ), // meta box title
-				'pages'          => array( 'testimonial_posts' ), // post types, accept custom post types as well, default is array('post'); optional
-				'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
-				'priority'       => 'high', // order of meta box: high (default), low; optional
-				'fields'         => apply_filters( 'cyberchimps_testimonial_single_metabox_fields', $testimonial_fields), // list of meta fields (can be added by field arrays)
-				'local_images'   => false, // Use local or hosted images (meta box images for add/remove)
-				'use_with_theme' => true //change path if used with theme set to true, false for a plugin or anything else for a custom path(default false).
-			);
+			
                         $directory_uri = get_template_directory_uri();
 
-			/*
-			 * Initiate your meta box
-			 */
-			$testimonial_meta = new Cyberchimps_Meta_Box( $testimonial_config );
-
-			/**
-			 * Set up Meta Boxes on Page
-			 *
-			 */
-
-			$testimonial_terms = get_terms( 'testimonial_categories', 'hide_empty=0' );
-			if( !is_wp_error( $testimonial_terms ) ) {
-				foreach( $testimonial_terms as $term ) {
-					$testimonial_options[$term->slug] = $term->name;
-				}
-			}
-			else {
-				$testimonial_options = null;
-			}
 
 			$page_fields = array(
 				array(
