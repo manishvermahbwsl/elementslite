@@ -89,7 +89,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                             
                                 <div class="span6">
                                     <div class="span12 contact_left_sec">
-                                        
+                                        <?php if(!empty($custom_contact_address)){?>
                                         <div class="row-fluid contact_addr">
                                             <div class="span12">
                                                 <div class="row-fluid">
@@ -98,6 +98,9 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php } 
+                                       if(!empty($custom_contact_number)){
+                                        ?>
                                         <div class="row-fluid contact_addr">
                                             <div class="span12">
                                                 <div class="row-fluid">
@@ -106,6 +109,9 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                                                 </div>
                                             </div>
                                         </div>
+                                       <?php }
+                                        if(!empty($custom_contact_email)){
+                                       ?>
                                         <div class="row-fluid contact_addr">
                                             <div class="span12">
                                                 <div class="row-fluid">
@@ -114,6 +120,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php } ?>
                                     </div>        
                                 </div>
                             
