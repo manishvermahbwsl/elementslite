@@ -142,33 +142,33 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'type'    => 'text',
 					'id'      => 'custom_contact_title',
 					'class'   => '',
-					'name'    => __( 'Contact Section Title', 'cyberchimps_elements' )
+					'name'    => __( 'Contact Section Title', 'cyberchimps_core' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_address',
 					'class'   => '',
-					'name'    => __( 'Contact Address', 'cyberchimps_elements' )
+					'name'    => __( 'Contact Address', 'cyberchimps_core' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_number',
 					'class'   => '',
-					'name'    => __( 'Contact Number', 'cyberchimps_elements' )
+					'name'    => __( 'Contact Number', 'cyberchimps_core' )
 				),
 				array(
 					'type'    => 'text',
 					'id'      => 'custom_contact_email',
 					'class'   => '',
-					'name'    => __( 'Contact Email', 'cyberchimps_elements' )
+					'name'    => __( 'Contact Email', 'cyberchimps_core' )
 				),
 				
 				array(
 					'type'    => 'text',
 					'id'      => 'contactus_element_text',
 					'class'   => '',
-					'name'    => __( 'Additional data', 'cyberchimps_elements' ),
-					'desc' => __('Recommended: Contact Form', 'cyberchimps_elements')
+					'name'    => __( 'Additional data', 'cyberchimps_core' ),
+					'desc' => __('Recommended: Contact Form', 'cyberchimps_core')
 				),
                             
                            
@@ -179,7 +179,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			 */
 			$page_config = array(
 				'id'             => 'map_contact_options', // meta box id, unique per meta box
-				'title'          => __( 'Custom Contact Options', 'cyberchimps_elements' ), // meta box title
+				'title'          => __( 'Custom Contact Options', 'cyberchimps_core' ), // meta box title
 				'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 				'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 				'priority'       => 'high', // order of meta box: high (default), low; optional
