@@ -51,8 +51,8 @@ function cyberchimps_selected_elements() {
 		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
 		"blog_post_page" => __( 'Post Page', 'cyberchimps_core' ),
 		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements'),
-                "map_contact"	     => __( 'Contact Us', 'cyberchimps_elements')
+                "testimonial"	     => __( 'Testimonial', 'cyberchimps_core'),
+                "map_contact"	     => __( 'Contact Us', 'cyberchimps_core')
 	);
 
 	return $options;
@@ -66,8 +66,8 @@ function cyberchimps_selected_page_elements() {
 		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
 		"page_section"   => __( 'Page', 'cyberchimps_core' ),
 		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' ),
-                "testimonial"	     => __( 'Testimonial', 'cyberchimps_elements'),
-                "map_contact"	     => __( 'Contact Us', 'cyberchimps_elements')
+                "testimonial"	     => __( 'Testimonial', 'cyberchimps_core'),
+                "map_contact"	     => __( 'Contact Us', 'cyberchimps_core')
 	);
 
 	return $options;

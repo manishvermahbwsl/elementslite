@@ -70,9 +70,9 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 				array(
 					'type'    => 'single_image',
 					'id'      => 'testimonial_background',
-					'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_elements'),
+					'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),
 					'class'   => '',
-					'name'    => __( 'Testimonial Background', 'cyberchimps_elements' )
+					'name'    => __( 'Testimonial Background', 'cyberchimps_core' )
 				),
                             array(
                                         'name'    => __( 'First Testimonial Image', 'cyberchimps_core' ),
@@ -174,7 +174,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 			 */
 			$page_config = array(
 				'id'             => 'testimonial_options', // meta box id, unique per meta box
-				'title'          => __( 'Testimonial Options', 'cyberchimps_elements' ), // meta box title
+				'title'          => __( 'Testimonial Options', 'cyberchimps_core' ), // meta box title
 				'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 				'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 				'priority'       => 'high', // order of meta box: high (default), low; optional
