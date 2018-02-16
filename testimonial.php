@@ -70,8 +70,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 				array(
 					'type'    => 'single_image',
 					'id'      => 'testimonial_background',
-					'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),
-					'class'   => '',
+					'desc'    => __('Best suited image size is 1280px * 375px', 'cyberchimps_core'),					
 					'name'    => __( 'Testimonial Background', 'cyberchimps_core' ),
 					'class'   => ''
 				),
@@ -81,8 +80,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'id'      => 'cyberchimps_blog_testimonial_image_one',
                                         'type'    => 'single_image',
 					'class'   => '',
-                                        'std'     => $directory_uri . apply_filters( 'cyberchimps_testimonial_img1', '/elements/lib/images/testimonial/client01.jpg' )
-                                        
+                                        'std'     => $directory_uri . apply_filters( 'cyberchimps_testimonial_img1', '/elements/lib/images/testimonial/client01.jpg' )                                        
                                 ),
                             array(
                                         'name'    => __( 'First Testimonial Author Name', 'cyberchimps_core' ),
@@ -176,9 +174,10 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'type'    => 'textarea',
                                         'std'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet.',
                                         'section' => 'cyberchimps_testimonial_section',
-                                        'heading' => 'cyberchimps_blog_heading'
+                                        'heading' => 'cyberchimps_blog_heading',
+					'class'   => ''
                                 ),
-				'class'   => ''
+				
                             
 
 			);
