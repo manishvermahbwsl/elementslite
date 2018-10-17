@@ -37,28 +37,27 @@ function cyberchimps_portfolio_lite_page_options() {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_portfolio_lite_image_one',
 			'class' => '',
-			'name'  => __( 'First Portfolio Image', 'primo' ),
-			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+			'name'  => __( 'First Portfolio Image', 'cyberchimps_core' ),
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_lite_image_one_caption',
 			'class' => '',
-			'name'  => __( 'First Portfolio Image Caption', 'primo' ),
-			'std'   => __( 'Image 1', 'primo' )
+			'name'  => __( 'First Portfolio Image Caption', 'cyberchimps_core' ),
+			'std'   => __( 'Image 1', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_portfolio_link_toggle_one',
 			'class' => 'checkbox',
-			'name'  => __( 'First Porfolio Link', 'primo' ),
+			'name'  => __( 'First Porfolio Link', 'cyberchimps_core' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_link_url_one',
 			'class' => '',
-			'name'  => __( 'Link URL', 'primo' ),
+			'name'  => __( 'Link URL', 'cyberchimps_core' ),
 			'std'   => esc_url( home_url() )
 		),
 
@@ -67,28 +66,27 @@ function cyberchimps_portfolio_lite_page_options() {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_portfolio_lite_image_two',
 			'class' => '',
-			'name'  => __( 'Second Portfolio Image', 'primo' ),
-			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+			'name'  => __( 'Second Portfolio Image', 'cyberchimps_core' ),
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_lite_image_two_caption',
 			'class' => '',
-			'name'  => __( 'Second Portfolio Image Caption', 'primo' ),
-			'std'   => __( 'Image 2', 'primo' )
+			'name'  => __( 'Second Portfolio Image Caption', 'cyberchimps_core' ),
+			'std'   => __( 'Image 2', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_portfolio_link_toggle_two',
 			'class' => 'checkbox',
-			'name'  => __( 'Second Porfolio Link', 'primo' ),
+			'name'  => __( 'Second Porfolio Link', 'cyberchimps_core' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_link_url_two',
 			'class' => '',
-			'name'  => __( 'Link URL', 'primo' ),
+			'name'  => __( 'Link URL', 'cyberchimps_core' ),
 			'std'   => esc_url( home_url() )
 		),
 
@@ -97,28 +95,27 @@ function cyberchimps_portfolio_lite_page_options() {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_portfolio_lite_image_three',
 			'class' => '',
-			'name'  => __( 'Third Portfolio Image', 'primo' ),
-			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+			'name'  => __( 'Third Portfolio Image', 'cyberchimps_core' ),
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_lite_image_three_caption',
 			'class' => '',
-			'name'  => __( 'Third Portfolio Image Caption', 'primo' ),
-			'std'   => __( 'Image 3', 'primo' )
+			'name'  => __( 'Third Portfolio Image Caption', 'cyberchimps_core' ),
+			'std'   => __( 'Image 3', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_portfolio_link_toggle_three',
 			'class' => 'checkbox',
-			'name'  => __( 'Third Porfolio Link', 'primo' ),
+			'name'  => __( 'Third Porfolio Link', 'cyberchimps_core' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_link_url_three',
 			'class' => '',
-			'name'  => __( 'Link URL', 'primo' ),
+			'name'  => __( 'Link URL', 'cyberchimps_core' ),
 			'std'   => esc_url( home_url() )
 		),
 
@@ -127,28 +124,27 @@ function cyberchimps_portfolio_lite_page_options() {
 			'type'  => 'single_image',
 			'id'    => 'cyberchimps_portfolio_lite_image_four',
 			'class' => '',
-			'name'  => __( 'Fourth Portfolio Image', 'primo' ),
-			'std'   => $directory . '/cyberchimps/lib/images/portfolio.jpg'
+			'name'  => __( 'Fourth Portfolio Image', 'cyberchimps_core' ),
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_lite_image_four_caption',
 			'class' => '',
-			'name'  => __( 'Fourth Portfolio Image Caption', 'primo' ),
-			'std'   => __( 'Image 4', 'primo' )
+			'name'  => __( 'Fourth Portfolio Image Caption', 'cyberchimps_core' ),
+			'std'   => __( 'Image 4', 'cyberchimps_core' )
 		),
 		array(
 			'type'  => 'checkbox',
 			'id'    => 'cyberchimps_portfolio_link_toggle_four',
 			'class' => 'checkbox',
-			'name'  => __( 'Fourth Porfolio Link', 'primo' ),
+			'name'  => __( 'Fourth Porfolio Link', 'cyberchimps_core' ),
 			'std'   => 1
 		),
 		array(
 			'type'  => 'text',
 			'id'    => 'cyberchimps_portfolio_link_url_four',
 			'class' => '',
-			'name'  => __( 'Link URL', 'primo' ),
+			'name'  => __( 'Link URL', 'cyberchimps_core' ),
 			'std'   => esc_url( home_url() )
 		),
 	);
@@ -157,7 +153,7 @@ function cyberchimps_portfolio_lite_page_options() {
 	 */
 	$page_config = array(
 		'id'             => 'portfolio_lite_options', // meta box id, unique per meta box
-		'title'          => __( 'Portfolio Lite Options', 'primo' ), // meta box title
+		'title'          => __( 'Portfolio Lite Options', 'cyberchimps_core' ), // meta box title
 		'pages'          => array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
 		'context'        => 'normal', // where the meta box appear: normal (default), advanced, side; optional
 		'priority'       => 'low', // order of meta box: high (default), low; optional
@@ -221,10 +217,10 @@ function cyberchimps_portfolio_lite_content() {
 		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
 
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ) );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ) );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ) );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img4', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one' );
+		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two' );
+		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three' );
+		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
 
 		// Getting caption for each protfolio
 		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
@@ -251,7 +247,7 @@ function cyberchimps_portfolio_lite_content() {
 	// Set the markup for title
 	$title_output = ( $title_enable == 'on' OR $title_enable == '1' ) ? $title : '';
 
-	// Post-specific variables 	
+	// Post-specific variables
 	$image = get_post_meta( $post->ID, 'portfolio_image', true );
 	$title = get_the_title();
 
@@ -309,44 +305,52 @@ function cyberchimps_portfolio_lite_content() {
 				<!-- Portfolio 1 -->
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
-						<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img
+						<?php if ( $img1 ) : ?>
+							<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img
 								src='<?php echo esc_url( $img1 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption1 ); ?></div>
 						</a>
+					<?php endif; ?>
 					</div>
 				</li>
 
 				<!-- Portfolio 2 -->
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
+						<?php if ( $img2 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link2 ); ?>' <?php echo esc_attr( $portfolio_rel2 ); ?> title='<?php echo esc_attr( $caption2 ); ?>'><img
 								src='<?php echo esc_url( $img2 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption2 ); ?></div>
 						</a>
+					<?php endif; ?>
 					</div>
 				</li>
 
 				<!-- Portfolio 3 -->
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
+						<?php if ( $img3 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link3 ); ?>' <?php echo esc_attr( $portfolio_rel3 ); ?> title='<?php echo esc_attr( $caption3 ); ?>'><img
 								src='<?php echo esc_url( $img3 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption3 ); ?></div>
 						</a>
+					<?php endif; ?>
 					</div>
 				</li>
 
 				<!-- Portfolio 4 -->
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
+						<?php if ( $img4 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link4 ); ?>' <?php echo esc_attr( $portfolio_rel4 ); ?> title='<?php echo esc_attr( $caption4 ); ?>'><img
 								src='<?php echo esc_url( $img4 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption4 ); ?></div>
 						</a>
+					<?php endif; ?>
 					</div>
 				</li>
 			</ul>
