@@ -16,15 +16,14 @@
  */
 
 // Don't load directly
-if (!defined('ABSPATH')) {
-    die('-1');
+if( !defined( 'ABSPATH' ) ) {
+	die( '-1' );
 }
 
 // Add Slider page options
-add_action('init', 'cyberchimps_slider_lite_page_options');
+add_action( 'init', 'cyberchimps_slider_lite_page_options' );
 
-function cyberchimps_slider_lite_page_options()
-{
+function cyberchimps_slider_lite_page_options() {
     /**
      * Set up Portfolio Lite on Page options
      */
@@ -38,40 +37,40 @@ function cyberchimps_slider_lite_page_options()
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_one_image',
             'class'	=> '',
-            'name'	=> __('Slide One Image', 'primo')
+            'name'	=> __( 'Slide One Image', 'cyberchimps_core' ),
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_one_url',
             'class'	=> '',
-            'name'	=> __('Slide One Link', 'primo'),
-            'std'	=> esc_url(home_url())
+            'name'	=> __( 'Slide One Link', 'cyberchimps_core' ),
+            'std'	=> esc_url( home_url() )
         ),
         array(
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_two_image',
             'class'	=> '',
-            'name'	=> __('Slide Two Image', 'primo')
+            'name'	=> __( 'Slide Two Image', 'cyberchimps_core' ),
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_two_url',
             'class'	=> '',
-            'name'	=> __('Slide Two Link', 'primo'),
-            'std'	=> esc_url(home_url())
+            'name'	=> __( 'Slide Two Link', 'cyberchimps_core' ),
+            'std'	=> esc_url( home_url() )
         ),
-        array(
+		array(
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_three_image',
             'class'	=> '',
-            'name'	=> __('Slide Three Image', 'primo')
+            'name'	=> __( 'Slide Three Image', 'cyberchimps_core' ),
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_three_url',
             'class'	=> '',
-            'name'	=> __('Slide Three Link', 'primo'),
-            'std'	=> esc_url(home_url())
+            'name'	=> __( 'Slide Three Link', 'cyberchimps_core' ),
+            'std'	=> esc_url( home_url() )
         )
 
     );
@@ -80,7 +79,7 @@ function cyberchimps_slider_lite_page_options()
      */
     $page_config = array(
         'id'				=> 'slider_lite_options', // meta box id, unique per meta box
-        'title'				=> __('Slider Lite Options', 'primo'), // meta box title
+        'title'				=> __( 'Slider Lite Options', 'cyberchimps_core' ), // meta box title
         'pages'				=> array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
         'context'			=> 'normal', // where the meta box appear: normal (default), advanced, side; optional
         'priority'			=> 'low', // order of meta box: high (default), low; optional
@@ -92,39 +91,43 @@ function cyberchimps_slider_lite_page_options()
     /*
      * Initiate your meta box
      */
-    $page_meta = new Cyberchimps_Meta_Box($page_config);
+    $page_meta = new Cyberchimps_Meta_Box( $page_config );
 }
 
 // Action for Slider Lite
-add_action('slider_lite', 'cyberchimps_slider_lite_content');
+add_action( 'slider_lite', 'cyberchimps_slider_lite_content' );
 
-function cyberchimps_slider_lite_content()
-{
-    global $wp_query, $post;
+function cyberchimps_slider_lite_content() {
+	global $wp_query, $post;
 
-    // Set directory uri
-    $directory_uri = get_template_directory_uri();
-    $slide         = array();
-    $link          = array();
+	// Set directory uri
+	$directory_uri = get_template_directory_uri();
+	$slide         = array();
+	$link          = array();
 
-    if (is_page()) {
-        $slides[0]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_image', true);
-        $slides[1]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_image', true);
-        $slides[2]['img'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_image', true);
+	if( is_page() ) {
+		$slides[0]['img'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_one_image', true );
+		$slides[1]['img'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_two_image', true );
+		$slides[2]['img'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_three_image', true );
 
-        $slides[0]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_one_url', true);
-        $slides[1]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_two_url', true);
-        $slides[2]['link'] = get_post_meta($post->ID, 'cyberchimps_slider_lite_slide_three_url', true);
-    } else {
-        $slides[0]['img'] = cyberchimps_get_option('image_one_slide');
-        $slides[1]['img'] = cyberchimps_get_option('image_two_slide');
-        $slides[2]['img'] = cyberchimps_get_option('image_three_slide');
+		$slides[0]['link'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_one_url', true );
+		$slides[1]['link'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_two_url', true );
+		$slides[2]['link'] = get_post_meta( $post->ID, 'cyberchimps_slider_lite_slide_three_url', true );
+	}
 
-        $slides[0]['link'] = cyberchimps_get_option('image_one_slide_url', apply_filters('cyberchimps_slider_lite_url1', esc_url(home_url())));
-        $slides[1]['link'] = cyberchimps_get_option('image_two_slide_url', apply_filters('cyberchimps_slider_lite_url2', esc_url(home_url())));
-        $slides[2]['link'] = cyberchimps_get_option('image_three_slide_url', apply_filters('cyberchimps_slider_lite_url3', esc_url(home_url())));
-    }
-    $i = 0; ?>
+	else {
+
+		$slides[0]['img'] = cyberchimps_get_option( 'image_one_slide' );
+		$slides[1]['img'] = cyberchimps_get_option( 'image_two_slide' );
+		$slides[2]['img'] = cyberchimps_get_option( 'image_three_slide' );
+
+		$slides[0]['link'] = cyberchimps_get_option( 'image_one_slide_url', apply_filters( 'cyberchimps_slider_lite_url1', esc_url( home_url() ) ) );
+		$slides[1]['link'] = cyberchimps_get_option( 'image_two_slide_url', apply_filters( 'cyberchimps_slider_lite_url2', esc_url( home_url() ) ) );
+		$slides[2]['link'] = cyberchimps_get_option( 'image_three_slide_url', apply_filters( 'cyberchimps_slider_lite_url3', esc_url( home_url() ) ) );
+
+	}
+	$i = 0;
+	?>
 	<div class="row-fluid">
 	<div id="slider_lite" class="carousel slide">
 		<div class="carousel-inner">
@@ -135,18 +138,21 @@ function cyberchimps_slider_lite_content()
 				<?php else: ?>
 				<div class="item">
 					<?php endif; ?>
-					<a href="<?php echo esc_url($slide['link']); ?>">
-						<img src="<?php echo esc_url($slide['img']); ?>" alt="Slider"/>
+					<a href="<?php echo esc_url( $slide['link'] ); ?>">
+						<img src="<?php echo esc_url( $slide['img'] ); ?>" alt="Slider"/>
 					</a>
 				</div>
 				<?php endif; ?>
 				<?php $i++;
-    endforeach; ?>
+				endforeach;
+				?>
 			</div>
 
+			<?php if ( $slides[0]['img'] || $slides[1]['img'] || $slides[2]['img'] ) : ?>
 			<!-- Slider nav -->
 			<a class="carousel-control left slider-lite-left" href="#slider_lite" data-slide="prev">&lsaquo;</a>
 			<a class="carousel-control right slider-lite-right" href="#slider_lite" data-slide="next">&rsaquo;</a>
+			<?php endif; ?>
 
 		</div>
 	</div>
