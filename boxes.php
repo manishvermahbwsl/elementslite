@@ -45,14 +45,13 @@ function cyberchimps_boxes_lite_content() {
 	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text' );
 	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text' );
 
-if( $img1 != '' || $img2 != '' || $img3 != '' ){
 
 	?>
 
 	<!-- Start of markup for boxes lite element -->
 	<div id="widget_boxes_container" class="row-fluid">
 		<div class="boxes">
-			<?php if( $url1 != '' || $img1 != '' ): ?>
+			<?php if( $url1 != '' || $img1 != '' || $text1 != '' ): ?>
 			<div class="box span4">
 				<?php if( $url1 != '' && $img1 != '' ): ?>
 					<a href="<?php echo esc_url( $url1 ); ?>" class="box-link">
@@ -70,7 +69,7 @@ if( $img1 != '' || $img2 != '' || $img3 != '' ){
 		<?php endif; ?>
 			<!--end box1-->
 
-			<?php if( $url2 != '' || $img2 != '' ): ?>
+			<?php if( $url2 != '' || $img2 != ''  || $text2 != '' ): ?>
 			<div class="box span4">
 				<?php if( $url2 != '' && $img2 != '' ): ?>
 					<a href="<?php echo esc_url( $url2 ); ?>" class="box-link">
@@ -88,7 +87,7 @@ if( $img1 != '' || $img2 != '' || $img3 != '' ){
 		<?php endif; ?>
 
 			<!--end box2-->
-			<?php if( $url3 != '' || $img3 != '' ): ?>
+			<?php if( $url3 != '' || $img3 != ''  || $text3 != ''  ): ?>
 			<div class="box span4">
 				<?php if( $url3 != '' && $img3 != '' ): ?>
 					<a href="<?php echo esc_url( $url3 ); ?>" class="box-link">
@@ -111,5 +110,4 @@ if( $img1 != '' || $img2 != '' || $img3 != '' ){
 	</div><!-- end row-fluid -->
 	<!-- End of markup for boxes lite element -->
 <?php }
-}
 ?>
