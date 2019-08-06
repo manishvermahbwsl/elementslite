@@ -15,11 +15,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-/**
- * Add plugin automation file
- */
-require_once( dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php' );
-
 // Load style for elements
 function cyberchimps_add_elements_style() {
 
