@@ -32,12 +32,12 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 // Set directory path
 $directory_path = get_template_directory();
 
-require_once( $directory_path . '/elements/parallax.php' );
-require_once( $directory_path . '/elements/portfolio-lite.php' );
-require_once( $directory_path . '/elements/slider-lite.php' );
-require_once( $directory_path . '/elements/boxes.php' );
-require_once( $directory_path . '/elements/testimonial.php' );
-require_once( $directory_path . '/elements/contact-us.php' );
+require_once get_parent_theme_file_path('/elements/parallax.php' );
+require_once get_parent_theme_file_path('/elements/portfolio-lite.php' );
+require_once get_parent_theme_file_path('/elements/slider-lite.php' );
+require_once get_parent_theme_file_path('/elements/boxes.php' );
+require_once get_parent_theme_file_path('/elements/testimonial.php' );
+require_once get_parent_theme_file_path('/elements/contact-us.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
