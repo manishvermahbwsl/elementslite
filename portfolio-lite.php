@@ -213,32 +213,32 @@ function cyberchimps_portfolio_lite_content() {
 	else {
 
 		// Geting title option
-		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
-		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
+		$title_enable = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
+		$title        = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
 
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one' );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two' );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three' );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
+		$img1 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one' );
+		$img2 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two' );
+		$img3 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three' );
+		$img4 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
 
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption' );
-		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption' );
-		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption' );
-		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption' );
+		$caption1 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption' );
+		$caption2 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption' );
+		$caption3 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption' );
+		$caption4 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption' );
 
 		// Getting Custom URL toggle
-		$url_toggle1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );
-		$url_toggle2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_two' );
-		$url_toggle3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_three' );
-		$url_toggle4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_four' );
+		$url_toggle1 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );
+		$url_toggle2 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_two' );
+		$url_toggle3 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_three' );
+		$url_toggle4 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_four' );
 
 		// Getting URL of custom link
-		$url1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_one' );
-		$url2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_two' );
-		$url3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_three' );
-		$url4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_four' );
+		$url1 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_one' );
+		$url2 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_two' );
+		$url3 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_three' );
+		$url4 = Cyberchimps_Helper::cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_url_four' );
 	}
 
 	// Set the title to default value if null is supplied
