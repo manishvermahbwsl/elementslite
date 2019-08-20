@@ -30,7 +30,7 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 
 // Load elements
 // Set directory path
-$directory_path = get_template_directory();
+$cyberchimps_directory_path = get_template_directory();
 
 require_once get_parent_theme_file_path('/elements/parallax.php' );
 require_once get_parent_theme_file_path('/elements/portfolio-lite.php' );

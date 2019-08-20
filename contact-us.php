@@ -49,7 +49,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 
 		public function render_display() {
 
-			global $post, $post_id;
+			global $post;
                         if(is_page())
                         {
 			$post_id = $post->ID;
