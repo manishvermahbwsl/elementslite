@@ -15,11 +15,6 @@
  * @link     http://www.cyberchimps.com/
  */
 
-/**
- * Add plugin automation file
- */
-require_once( dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php' );
-
 // Load style for elements
 function cyberchimps_add_elements_style() {
 
@@ -35,14 +30,14 @@ add_action( 'wp_enqueue_scripts', 'cyberchimps_add_elements_style', 30 );
 
 // Load elements
 // Set directory path
-$directory_path = get_template_directory();
+$cyberchimps_directory_path = get_template_directory();
 
-require_once( $directory_path . '/elements/parallax.php' );
-require_once( $directory_path . '/elements/portfolio-lite.php' );
-require_once( $directory_path . '/elements/slider-lite.php' );
-require_once( $directory_path . '/elements/boxes.php' );
-require_once( $directory_path . '/elements/testimonial.php' );
-require_once( $directory_path . '/elements/contact-us.php' );
+require_once get_parent_theme_file_path('/elements/parallax.php' );
+require_once get_parent_theme_file_path('/elements/portfolio-lite.php' );
+require_once get_parent_theme_file_path('/elements/slider-lite.php' );
+require_once get_parent_theme_file_path('/elements/boxes.php' );
+require_once get_parent_theme_file_path('/elements/testimonial.php' );
+require_once get_parent_theme_file_path('/elements/contact-us.php' );
 
 // main blog drag and drop options
 function cyberchimps_selected_elements() {

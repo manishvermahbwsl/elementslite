@@ -196,7 +196,7 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 		public function render_display() {
 
 			// Get the default image of carousel
-			$custombackground = cyberchimps_get_option('testimonial_background');
+			$custombackground = Cyberchimps_Helper::cyberchimps_get_option('testimonial_background');
 
 			if( is_page() ) {
 				$customcategory = get_post_meta( get_the_ID(), 'testimonial_category', true );

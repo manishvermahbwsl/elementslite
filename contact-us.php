@@ -49,7 +49,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 
 		public function render_display() {
 
-			global $post, $post_id;
+			global $post;
                         if(is_page())
                         {
 			$post_id = $post->ID;
@@ -63,11 +63,11 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                         else
                         {
 
-                        $custom_contact_title =	        cyberchimps_get_option('custom_contact_title');
-			$custom_contact_address =	cyberchimps_get_option('custom_contact_address');
-			$custom_contact_number =	cyberchimps_get_option('custom_contact_number');
-			$custom_contact_email =		cyberchimps_get_option('custom_contact_email');
-			$contactus_element_text = 	cyberchimps_get_option('contactus_element_text');
+                        $custom_contact_title =	        Cyberchimps_Helper::cyberchimps_get_option('custom_contact_title');
+			$custom_contact_address =	Cyberchimps_Helper::cyberchimps_get_option('custom_contact_address');
+			$custom_contact_number =	Cyberchimps_Helper::cyberchimps_get_option('custom_contact_number');
+			$custom_contact_email =		Cyberchimps_Helper::cyberchimps_get_option('custom_contact_email');
+			$contactus_element_text = 	Cyberchimps_Helper::cyberchimps_get_option('contactus_element_text');
 
                         }
                 if (!empty($custom_contact_title) || !empty($custom_contact_number) || !empty($custom_contact_email) ) {
